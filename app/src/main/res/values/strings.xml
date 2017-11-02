@@ -1,0 +1,72 @@
+<resources>
+    <string name="app_name">Dukandaar</string>
+
+    <array name="category">
+        <item>All Category</item>
+        <item>CA TV, Cable Equipments &amp; Dish Antenna</item>
+        <item>Cable Booster</item>
+        <item>Dish Anteena</item>
+        <item>Modulator</item>
+        <item>Receivers</item>
+        <item>Hifi Sound, DJ\'s &amp; PA System</item>
+        <item>Amplifire</item>
+        <item>Woofers</item>
+        <item>Repairing Services</item>
+        <item>Mobile Repairing</item>
+        <item>Other Electronic</item>
+        <item>Tv/Led/Lcd Repairing</item>
+        <item>Security Camera &amp; Networking</item>
+        <item>CCTV Cameras</item>
+        <item>Communication Networking</item>
+        <item>DVR</item>
+        <item>Other Accessories</item>
+        <item>Mobile, Tablets &amp; Accessories</item>
+        <item>New Mobiles</item>
+        <item>New Tablets</item>
+        <item>Used Tablets</item>
+        <item>Mobile Accessories</item>
+        <item>Used &amp; refubricative</item>
+        <item>Cable Booster</item>
+        <item>Car Stereo &amp; Accessories</item>
+        <item>Car Speakers</item>
+        <item>Car Stereo Accessoreis</item>
+        <item>Car Stereo Amp</item>
+        <item>Car Stereo Cameras</item>
+        <item>Car Stereo Players</item>
+        <item>DVD\'s &amp; Software</item>
+        <item>Audio &amp; Video</item>
+        <item>Movies</item>
+        <item>Software</item>
+        <item>Tv, LCD &amp; Dvd Players</item>
+        <item>China Lcd</item>
+        <item>Used T.V, LED &amp; LCDs</item>
+        <item>New T.V, LED &amp; LCDs</item>
+        <item>Cable Booster</item>
+        <item>Electronics &amp; Spare Parts</item>
+        <item>Capacitors</item>
+        <item>L.E.D Circuit</item>
+        <item>LED Drivers</item>
+        <item>Other Spare Parts</item>
+        <item>Remotes</item>
+        <item>Transistors</item>
+        <item>Solar System &amp; Accessories</item>
+        <item>12V Solar Accessories</item>
+        <item>Batteries</item>
+        <item>Hybrid Inverters</item>
+        <item>Solar Pv Module</item>
+        <item>Games &amp; Accessories</item>
+        <item>Gaming Pads &amp; Accessories</item>
+        <item>PSP &amp; Play Stations</item>
+        <item>X Box</item>
+        <item>X Box, Play Station &amp; PSP Games</item>
+        <item>Computer, Laptop &amp; Accessories</item>
+        <item>Accessories</item>
+        <item>New Laptops, Computer &amp; Accessories</item>
+        <item>Used Laptops, Computers &amp; Accessories</item>
+        <item>Wireless Routers</item>
+        <item>Scanners</item>
+        <item>Web Cameras</item>
+
+
+    </array>
+</resources>

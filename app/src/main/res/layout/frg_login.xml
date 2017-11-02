@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/et_login_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_marginTop="100dp"/>
+
+
+            <EditText
+                android:id="@+id/et_login_password"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_below="@+id/et_login_email"/>
+
+
+            <Button
+                android:id="@+id/bt_login"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:text="Login"
+                android:textAllCaps="false"
+                android:layout_below="@+id/et_login_password"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/colorWhite"
+                android:layout_centerHorizontal="true"/>
+
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:indeterminateDrawable="@drawable/progress_dialog" >
+            </ProgressBar>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>

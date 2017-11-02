@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar"
+        android:titleTextColor="@color/colorWhite"
+        app:titleTextColor="@color/colorWhite"
+        android:theme="@style/AppTheme"
+        app:title="Dukandaar"
+        android:background="@color/colorOrangeYellow">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_alignParentRight="true"
+            android:foregroundGravity="right"
+            android:layout_gravity="right"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp">
+
+
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:src="@drawable/search_icon"/>
+
+            <!-- place title icon here-->
+
+        </LinearLayout>
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+    <android.support.v4.widget.DrawerLayout
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:id="@+id/drawerLayout">
+
+
+   <!--     <android.support.design.widget.NavigationView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:id="@+id/shitstuff"
+            android:layout_marginTop="-24dp"
+            android:background="@color/colorWhite"
+            app:itemTextColor="@color/colorBlack"
+            app:headerLayout="@layout/header"
+            app:menu="@menu/drawermenu">
+-->
+
+
+        <android.support.design.widget.NavigationView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginTop="-24dp"
+            app:itemTextColor="@color/colorBlack"
+            app:headerLayout="@layout/header"
+            android:fitsSystemWindows="true">
+            <!-- app:headerLayout="@layout/nav_header_main"-->
+
+
+
+
+            <ExpandableListView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorSkyBlue"
+                android:layout_marginTop="160dp"
+                android:choiceMode="singleChoice"
+                android:groupIndicator="@drawable/setting_selector"
+                android:id="@+id/navigationmenu">
+            </ExpandableListView>
+
+
+
+        </android.support.design.widget.NavigationView>
+
+
+
+    </android.support.v4.widget.DrawerLayout>
+
+
+</LinearLayout>

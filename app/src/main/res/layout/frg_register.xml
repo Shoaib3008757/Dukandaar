@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <EditText
+                android:id="@+id/et_register_name"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="text"
+                android:hint="Name"
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_marginTop="50dp"/>
+
+
+            <EditText
+                android:id="@+id/et_register_email"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textEmailAddress"
+                android:hint="Email"
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_below="@+id/et_register_name"/>
+
+            <EditText
+                android:id="@+id/et_register_phone"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="phone"
+                android:hint="Phon No."
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_below="@+id/et_register_email"/>
+
+            <EditText
+                android:id="@+id/et_register_passwrod"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:inputType="textPassword"
+                android:hint="Password"
+                android:textColorHint="@color/colorOffWhite"
+                android:textColor="@color/colorBlack"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="10dp"
+                android:background="@drawable/et_background"
+                android:layout_below="@+id/et_register_phone"/>
+
+
+            <Button
+                android:id="@+id/bt_register"
+                android:layout_width="200dp"
+                android:layout_height="25dp"
+                android:text="Register"
+                android:textAllCaps="false"
+                android:layout_below="@+id/et_register_passwrod"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/button_background"
+                android:textColor="@color/colorWhite"
+                android:layout_centerHorizontal="true"/>
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:visibility="gone"
+                android:indeterminateDrawable="@drawable/progress_dialog" >
+            </ProgressBar>
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>

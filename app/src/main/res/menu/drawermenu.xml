@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    
+    <group android:id="@+id/my_id">
+        <!-- Divider will appear above this item -->
+        <item
+            android:title="Dashboard"
+            android:icon="@drawable/icon_home"
+            android:id="@+id/nav_item_name"/>
+
+        <item
+            android:title="Mobile, Tablet, Accesories"
+            android:icon="@drawable/icon_mobile"
+            android:id="@+id/nav_item_home"/>
+
+        <item
+            android:title="Car Stereo &amp; Accesories"
+            android:icon="@drawable/icon_car"
+            android:id="@+id/nav_item_show_franchiser"/>
+
+        <item
+            android:title="TV, LCD &amp; Sound System"
+            android:icon="@drawable/icon_tv_lcd"
+            android:id="@+id/nav_item_about"/>
+
+        <item
+            android:title="Computer, Laptop &amp; Accesories"
+            android:icon="@drawable/icon_laptop"
+            android:id="@+id/nav_item_buyer"/>
+
+        <item
+            android:title="Solar System &amp; Accesories"
+            android:icon="@drawable/icon_sun"
+            android:id="@+id/nav_item_termscondition"/>
+
+        <item
+            android:title="Electronics &amp; Sapre Parts"
+            android:icon="@drawable/icon_electricity"
+            />
+
+        <item
+            android:title="Games &amp; Accesories"
+            android:icon="@drawable/icon_games"
+            />
+        <item
+            android:title="DVD &amp; Softwares"
+            android:icon="@drawable/icon_windows"
+            />
+
+        <item
+            android:title="Security Cameras &amp; Equipments"
+            android:icon="@drawable/icon_security"
+            />
+
+        <item
+            android:title="Hifi Sound, DJ's &amp; PA System"
+            android:icon="@drawable/icon_music"
+            />
+    </group>
+
+
+
+</menu>
