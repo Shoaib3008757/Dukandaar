@@ -74,7 +74,7 @@ public class BaseActivityForDrawer extends AppCompatActivity {
     NavigationView mNavigationView;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         supportRequestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
         //requestWindowFeature(Window.FEATURE_NO_TITLE);
@@ -177,16 +177,19 @@ public class BaseActivityForDrawer extends AppCompatActivity {
 
                         if (headerPosition.equals("0") && itemPosition.equals("0")){
                             Intent memberActivity = new Intent(BaseActivityForDrawer.this, Members.class);
+                            memberActivity.putExtra("user_type", 0);// 0 mean whole saller
                             startActivity(memberActivity);
                             finish();
                         }
                         if (headerPosition.equals("0") && itemPosition.equals("1")){
                             Intent memberActivity = new Intent(BaseActivityForDrawer.this, Members.class);
+                            memberActivity.putExtra("user_type", 1);// 1 mean Retailer
                             startActivity(memberActivity);
                             finish();
                         }
                         if (headerPosition.equals("0") && itemPosition.equals("2")){
                             Intent memberActivity = new Intent(BaseActivityForDrawer.this, Members.class);
+                            memberActivity.putExtra("user_type", 2);// 2 mean Customer
                             startActivity(memberActivity);
                             finish();
                         }

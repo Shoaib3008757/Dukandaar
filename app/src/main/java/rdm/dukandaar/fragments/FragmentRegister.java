@@ -1,8 +1,13 @@
 package rdm.dukandaar.fragments;
 
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.MotionEventCompat;
+import android.support.v7.app.AlertDialog;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,6 +30,7 @@ import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -37,6 +43,8 @@ import java.util.HashMap;
 import java.util.List;
 
 import rdm.dukandaar.LoginUserClass;
+import rdm.dukandaar.MainActivity;
+import rdm.dukandaar.Members;
 import rdm.dukandaar.R;
 
 /**
@@ -51,11 +59,18 @@ public class FragmentRegister extends Fragment {
     Button bt_register;
     final String UserRegistrationUrl = "http://donate-life.ranglerz.be/dukandaar/dukandaar_index.php";
 
+    String userName;
+    String user_type;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view =  inflater.inflate(R.layout.frg_register, container, false);
 
+        Intent i = getActivity().getIntent();
+
+            int usertype = i.getExtras().getInt("user_type", -1);
+            user_type = Integer.toString(usertype);
+            Log.e("TAG", "from actvity: " + user_type);
 
         bar = (ProgressBar) view.findViewById(R.id.progressBar);
 
@@ -107,9 +122,13 @@ public class FragmentRegister extends Fragment {
                     //registering new user
                    // loginUser(mName, mEmail, mPhone, mPassword, refreshedToken);
 
-                    AsyncDataClass asyncRequestObject = new AsyncDataClass();
 
-                    asyncRequestObject.execute(UserRegistrationUrl, mName, mEmail, mPhone, mPassword, refreshedToken);
+                    Log.e("TAG", "from actvity 1: " + user_type);
+                    /*AsyncDataClass asyncRequestObject = new AsyncDataClass();
+                    asyncRequestObject.execute(UserRegistrationUrl, mName, mEmail, mPhone, mPassword, user_type, refreshedToken);
+*/
+                    registringUser(mName, mEmail, mPassword, mPhone, user_type, refreshedToken);
+                    userName = mName;
 
 
                 }
@@ -147,7 +166,12 @@ public class FragmentRegister extends Fragment {
 
                 nameValuePairs.add(new BasicNameValuePair("password", params[4]));
 
-                nameValuePairs.add(new BasicNameValuePair("reg_id", params[5]));
+                nameValuePairs.add(new BasicNameValuePair("user_type", params[5]));
+
+                nameValuePairs.add(new BasicNameValuePair("reg_id", params[6]));
+
+
+
 
 
                 httpPost.setEntity(new UrlEncodedFormEntity(nameValuePairs));
@@ -208,9 +232,7 @@ public class FragmentRegister extends Fragment {
 
             if(jsonResult == 0){
 
-
-
-                Toast.makeText(getActivity(), "Mobile Number Already Registered", Toast.LENGTH_LONG).show();
+                Toast.makeText(getActivity(), "Email Address Already Registered", Toast.LENGTH_LONG).show();
                 bar.setVisibility(View.GONE);
 
 
@@ -226,8 +248,9 @@ public class FragmentRegister extends Fragment {
                 intent.putExtra("USERNAME", enteredUsername);
                 intent.putExtra("MESSAGE", "You have been successfully Registered");
                 startActivity(intent);*/
-
                 bar.setVisibility(View.GONE);
+
+
 
             }
 
@@ -284,7 +307,110 @@ public class FragmentRegister extends Fragment {
         return returnedResult;
 
     }
+    //login User
+    private void registringUser(String name, String email, final String password, String phone, String user_type, final String reg_id) {
+        class LoginUser extends AsyncTask<String, Void, String>{
 
+
+            LoginUserClass ruc = new LoginUserClass();
+
+
+            @Override
+            protected void onPreExecute() {
+                super.onPreExecute();
+                bar.setVisibility(View.VISIBLE);
+
+
+            }
+
+            @Override
+            protected String doInBackground(String... params) {
+
+                HashMap<String, String> data = new HashMap<String,String>();
+
+                //for login user
+
+
+                data.put("name",params[0]);
+                data.put("email",params[1]);
+                data.put("password", params[2]);
+                data.put("phone", params[3]);
+                data.put("user_type", params[4]);
+                data.put("reg_id", params[5]);
+
+
+
+                String result = ruc.sendPostRequest(UserRegistrationUrl,data);
+
+                //  Toast.makeText(LoginOrRegister.this, "rss : " + result, Toast.LENGTH_SHORT).show();
+                Log.e("TAG", "RESULT RESULT : " + result);
+
+                return  result;
+
+
+            }
+
+            @Override
+            protected void onPostExecute(String result) {
+                super.onPostExecute(result);
+                bar.setVisibility(View.GONE);
+                Log.e("TAG", "result status: " + result);
+
+                Log.e("TAG", "Resulted Value: " + result);
+
+                if(result.equals("") || result == null){
+
+                    Toast.makeText(getActivity(), "Server connection failed", Toast.LENGTH_LONG).show();
+
+                    bar.setVisibility(View.GONE);
+
+                    return;
+
+                }
+
+                int jsonResult = returnParsedJsonObject(result);
+
+                if(jsonResult == 0){
+
+                    Toast.makeText(getActivity(), "Email Address Already Registered", Toast.LENGTH_LONG).show();
+                    bar.setVisibility(View.GONE);
+
+
+                    return;
+
+                }
+
+                if(jsonResult == 1) {
+
+                    //Toast.makeText(getActivity(), "Register Successfully", Toast.LENGTH_LONG).show();
+
+                    AlertDialog.Builder alert = new AlertDialog.Builder(getActivity());
+                    alert.setTitle("Register Successfully");
+                    alert.setMessage(userName + " Has Been Register Successfully, Press Ok To Login");
+                    alert.setPositiveButton("Ok", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            getActivity().finish();
+
+                            Intent currentActivity = new Intent(getActivity(), MainActivity.class);
+                            startActivity(currentActivity);
+
+                        }
+                    });
+                    alert.setIcon(R.drawable.item_arrow);
+                    alert.setCancelable(false);
+                    alert.show();
+                    bar.setVisibility(View.GONE);
+
+                }
+
+
+            }
+        }
+
+        LoginUser ru = new LoginUser();
+        ru.execute(name,email, password, phone, user_type, reg_id);
+    }
 
 }
 

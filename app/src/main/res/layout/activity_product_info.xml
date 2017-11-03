@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_product_info"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProductInfo"
+    android:background="@color/colorWhite">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/info_recyler_view"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"/>
+
+
+    <RelativeLayout
+        android:id="@+id/rl_title"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/corner"
+        android:layout_below="@+id/info_recyler_view"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:text="Sample Title Text"
+            android:textColor="@color/colorBlack"
+            android:textStyle="bold"/>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout
+        android:id="@+id/rl_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/corner"
+        android:layout_below="@+id/rl_title">
+
+        <TextView
+            android:id="@+id/tv_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Rs. 1000"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:textStyle="bold"
+            android:textColor="@color/colorBlack"/>
+
+        <TextView
+            android:id="@+id/tv_ex_tax"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_price"
+            android:text="Ex Tax Rs.90"
+            android:textColor="@color/colorGray"
+            android:layout_marginLeft="20dp"/>
+
+        <TextView
+            android:id="@+id/tv_10_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_price"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorGray"
+            android:text="10 or more Rs. 88"/>
+
+        <TextView
+            android:id="@+id/tv_20_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ex_tax"
+            android:layout_marginLeft="20dp"
+            android:textColor="@color/colorGray"
+            android:text="20 or more Rs.77"/>
+
+
+        <TextView
+            android:id="@+id/tv_30_more"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_ex_tax"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:textColor="@color/colorGray"
+            android:text="30 or more Rs.66"/>
+
+        <CheckBox
+            android:id="@+id/cb_availablity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Availability"
+            android:layout_marginBottom="10dp"
+            android:layout_below="@+id/tv_20_more"
+            android:layout_marginLeft="10dp"
+            android:textColor="@color/colorGray"
+            android:checked="true"/>
+
+    </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_saller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rl_price"
+            android:background="@drawable/corner">
+
+            <TextView
+                android:id="@+id/tv_saler_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Saler Name Here"
+                android:textColor="@color/colorBlack"
+                android:textStyle="bold"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"/>
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_below="@+id/tv_saler_name"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:tooltipText="Rating"/>
+
+            <TextView
+                android:id="@+id/tv_product_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rating_bar"
+                android:text="Product Code: 15"
+                android:textColor="@color/colorGray"
+                android:layout_marginLeft="20dp"/>
+
+            <TextView
+                android:id="@+id/tv_reward_points"
+                android:layout_below="@+id/tv_product_code"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/colorGray"
+                android:text="Reward Points: 100"/>
+            <TextView
+                android:id="@+id/tv_price_in_reward_points"
+                android:layout_below="@+id/tv_product_code"
+                android:layout_alignParentRight="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Price in reward points: 40"
+                android:layout_marginRight="20dp"
+                android:textColor="@color/colorGray"
+                android:layout_marginBottom="10dp"/>
+
+            <TextView
+                android:id="@+id/tv_brand"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorGray"
+                android:text="Brand: Apple"
+                android:layout_marginRight="20dp"
+                android:layout_above="@+id/tv_price_in_reward_points"
+                android:layout_alignStart="@+id/tv_price_in_reward_points" />
+
+        </RelativeLayout>
+
+
+
+
+    </RelativeLayout></ScrollView>
+</RelativeLayout>

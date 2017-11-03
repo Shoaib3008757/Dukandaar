@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
+import rdm.dukandaar.ProductInfo;
 import rdm.dukandaar.R;
 
 
@@ -31,6 +32,15 @@ public static RelativeLayout rl_buy;
         rl_buy = (RelativeLayout) view.findViewById(R.id.rl_buy);
         rl_info = (RelativeLayout) view.findViewById(R.id.rl_info);
 
+        //calling fucntion for click handler
+        sharButtonClickLister();
+        inClickLister();
+
+        return view;
+    }
+
+    public void sharButtonClickLister(){
+
         rl_share.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,7 +53,18 @@ public static RelativeLayout rl_buy;
             }
         });
 
-        return view;
+    }
+
+    public void inClickLister(){
+
+        rl_info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent infoActivity = new Intent(getActivity(), ProductInfo.class);
+                startActivity(infoActivity);
+            }
+        });
     }
 
 

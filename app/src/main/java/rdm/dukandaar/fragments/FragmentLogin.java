@@ -196,8 +196,6 @@ public class FragmentLogin extends Fragment {
                         Toast.makeText(getActivity(), "Server Connection Error", Toast.LENGTH_SHORT).show();
 
                     }
-
-
             }
 
 
@@ -206,67 +204,6 @@ public class FragmentLogin extends Fragment {
         LoginUser ru = new LoginUser();
         ru.execute(email,password);
     }
-
-    private String returnParsedJsonObject(String result){
-
-        JSONObject resultObject = null;
-
-        String returnedResult = null;
-
-        try {
-                resultObject = new JSONObject(result);
-            Log.e("TAG", "resol object: " + resultObject);
-
-
-
-                notLogin = resultObject.getString("success");
-
-                Log.e("TAG", "RESULT 111 " + notLogin);
-
-
-
-
-
-        } catch (JSONException e) {
-
-            e.printStackTrace();
-
-        }
-
-        return returnedResult;
-
-    }
-
-
-    private String returnParsedJsonObjectString(String result){
-
-        JSONObject resultObject = null;
-
-        String returnedResult = null;
-
-        try {
-
-            resultObject = new JSONObject(result);
-
-
-
-            returnedResult = resultObject.getString("result");
-
-
-
-
-        } catch (JSONException e) {
-
-            e.printStackTrace();
-
-        }
-
-        return returnedResult;
-
-    }
-
-
-
 
 
 }
