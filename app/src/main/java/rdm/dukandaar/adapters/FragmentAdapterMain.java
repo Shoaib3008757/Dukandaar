@@ -1,8 +1,12 @@
-package rdm.dukandaar.fragments;
+package rdm.dukandaar.adapters;
 
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
+
+import rdm.dukandaar.fragments.FragmentFeatureCategory;
+import rdm.dukandaar.fragments.FragmentMostView;
+import rdm.dukandaar.fragments.FragmentSeller;
 
 /**
  * Created by User-10 on 30-Oct-17.

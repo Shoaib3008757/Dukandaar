@@ -10,10 +10,9 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
-import rdm.dukandaar.NonSwipeableViewPager;
 import rdm.dukandaar.R;
+import rdm.dukandaar.adapters.FragmentAdapterMember;
 
 /**
  * Created by User-10 on 01-Nov-17.

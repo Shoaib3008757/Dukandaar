@@ -2,17 +2,12 @@ package rdm.dukandaar;
 
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 
-import rdm.dukandaar.fragments.FragmentAdapterMain;
-import rdm.dukandaar.fragments.FragmentAdapterMember;
-import rdm.dukandaar.fragments.FragmentFeatureCategory;
-import rdm.dukandaar.fragments.FragmentMostView;
-import rdm.dukandaar.fragments.FragmentSeller;
+import rdm.dukandaar.adapters.FragmentAdapterMember;
 
 public class Members extends BaseActivityForDrawer {
 
