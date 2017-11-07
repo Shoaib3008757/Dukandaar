@@ -144,6 +144,10 @@ public class BaseActivityForDrawer extends AppCompatActivity {
                     if (name!=null){
 
                         Log.e("TAG", "Header Posotion: " + headerPosition +  "\n" + "Item Position: " + itemPosition);
+                        if (headerPosition.equals("0") && itemPosition.equals("0")){
+                            Intent i = new Intent(BaseActivityForDrawer.this, ViewProfile.class);
+                            startActivity(i);
+                        }
                         if (headerPosition.equals("0") && itemPosition.equals("3")){
                             SharedPreferences.Editor edito = sharedPreferences.edit();
                             edito.clear();
@@ -153,6 +157,7 @@ public class BaseActivityForDrawer extends AppCompatActivity {
                             startActivity(i);
                             Toast.makeText(BaseActivityForDrawer.this, "Logout Successfully", Toast.LENGTH_SHORT).show();
                         }
+
 
 
 
@@ -180,6 +185,196 @@ public class BaseActivityForDrawer extends AppCompatActivity {
 
                     }
                 }
+
+                //for mobile, tablest and accesories head
+                if (headerPosition.equals("1") && itemPosition.equals("0")){
+                   // Toast.makeText(BaseActivityForDrawer.this, "New Mobiles", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "New Moiles");
+                    i.putExtra("result", "10");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("1") && itemPosition.equals("1")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "New Tablest", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "New Tablests");
+                    i.putExtra("result", "11");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("1") && itemPosition.equals("2")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Used Tablests", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Used Tablests");
+                    i.putExtra("result", "12");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("1") && itemPosition.equals("3")){
+                   // Toast.makeText(BaseActivityForDrawer.this, "Mobile Accesories", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Mobile Accesories");
+                    i.putExtra("result", "13");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("1") && itemPosition.equals("4")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Used And Reburicative", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Used And Reburicative");
+                    i.putExtra("result", "14");
+                    startActivity(i);
+                }
+
+                //for car stero and accessories tab
+                if (headerPosition.equals("2") && itemPosition.equals("0")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Car Speakers", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Car Speakers");
+                    i.putExtra("result", "20");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("2") && itemPosition.equals("1")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Car steroe accesoreis", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Car steroe accesoreis");
+                    i.putExtra("result", "21");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("2") && itemPosition.equals("2")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Care Stereo Amps", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Care Stereo Amps");
+                    i.putExtra("result", "22");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("2") && itemPosition.equals("3")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Car Stereo Cameras", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Car Stereo Cameras");
+                    i.putExtra("result", "23");
+                    startActivity(i);
+                }
+                if (headerPosition.equals("2") && itemPosition.equals("4")){
+                    //Toast.makeText(BaseActivityForDrawer.this, "Car Stereo Player", Toast.LENGTH_SHORT).show();
+                    Intent i = new Intent(BaseActivityForDrawer.this, MenuClickResults.class);
+                    i.putExtra("cate", "Car Stereo Player");
+                    i.putExtra("result", "24");
+                    startActivity(i);
+                }
+
+                //for TV LCD and Sound System
+                if (headerPosition.equals("3") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "China LCD", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("3") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Used, T.V Led and lcds", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("3") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "New, TV led and lcds", Toast.LENGTH_SHORT).show();
+                }
+
+                //for Computer laptops and accessories
+                if (headerPosition.equals("4") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Accessories", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("4") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "New laptop computer and accesories", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("4") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Used Laptop computers and accessories", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("4") && itemPosition.equals("3")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Wireless Routers", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("4") && itemPosition.equals("4")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Scanners", Toast.LENGTH_SHORT).show();
+                }
+
+                if (headerPosition.equals("4") && itemPosition.equals("5")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Cameras", Toast.LENGTH_SHORT).show();
+                }
+
+                //for Solar System and Accessories
+                if (headerPosition.equals("5") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "12 Volt Solar Accessories", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("5") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Batteries", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("5") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Hybrid Inverters", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("5") && itemPosition.equals("3")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Solar Pv Module", Toast.LENGTH_SHORT).show();
+                }
+
+
+                //for Electronics and Spare Parts
+                if (headerPosition.equals("6") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Capacitors", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("6") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "LED circuit", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("6") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "LED Drivers", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("6") && itemPosition.equals("3")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Other Spare Parts", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("6") && itemPosition.equals("4")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Remotes", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("6") && itemPosition.equals("5")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Transistors", Toast.LENGTH_SHORT).show();
+                }
+
+                //for Games and Accessories
+                if (headerPosition.equals("7") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Gaming pads and accessories", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("7") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "PSP and play station", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("7") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "X Box", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("7") && itemPosition.equals("3")){
+                    Toast.makeText(BaseActivityForDrawer.this, "X Box Play station and PSP Games", Toast.LENGTH_SHORT).show();
+                }
+
+                //for DVD and Software
+                if (headerPosition.equals("8") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Audio and videos", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("8") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Movies", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("8") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Softwares", Toast.LENGTH_SHORT).show();
+                }
+
+
+                //for Games and Accessories
+                if (headerPosition.equals("9") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "CCTV Cameras and equipments", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("9") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Communication Networking", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("9") && itemPosition.equals("2")){
+                    Toast.makeText(BaseActivityForDrawer.this, "DVR", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("9") && itemPosition.equals("3")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Other Accessories", Toast.LENGTH_SHORT).show();
+                }
+
+                //for Games and Accessories
+                if (headerPosition.equals("10") && itemPosition.equals("0")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Amplifier", Toast.LENGTH_SHORT).show();
+                }
+                if (headerPosition.equals("10") && itemPosition.equals("1")){
+                    Toast.makeText(BaseActivityForDrawer.this, "Woofers", Toast.LENGTH_SHORT).show();
+                }
+
 
 
 

@@ -62,6 +62,8 @@ public static RelativeLayout rl_buy;
             public void onClick(View view) {
 
                 Intent infoActivity = new Intent(getActivity(), ProductInfo.class);
+                infoActivity.putExtra("cate", "Feature Gategories");
+                infoActivity.putExtra("result", "10");
                 startActivity(infoActivity);
             }
         });

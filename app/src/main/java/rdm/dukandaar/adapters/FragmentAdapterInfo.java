@@ -6,6 +6,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 
 import rdm.dukandaar.fragments.FragmentFeatureCategory;
 import rdm.dukandaar.fragments.FragmentInfoDescription;
+import rdm.dukandaar.fragments.FragmentInfoReview;
 import rdm.dukandaar.fragments.FragmentInfoSpecification;
 import rdm.dukandaar.fragments.FragmentMostView;
 import rdm.dukandaar.fragments.FragmentSeller;
@@ -31,12 +32,14 @@ public class FragmentAdapterInfo extends FragmentStatePagerAdapter {
                 FragmentInfoSpecification pageTwo = new FragmentInfoSpecification();
                 return pageTwo;
             case 2:
-                FragmentSeller pageThree = new FragmentSeller();
-                return pageThree;
+                FragmentInfoReview pageOneDefault = new FragmentInfoReview();
+                return pageOneDefault;
+
 
             default:
-                FragmentFeatureCategory pageOneDefault = new FragmentFeatureCategory();
-                return pageOneDefault;
+                FragmentInfoDescription frgDefault = new FragmentInfoDescription();
+                return frgDefault;
+
         }
     }
 

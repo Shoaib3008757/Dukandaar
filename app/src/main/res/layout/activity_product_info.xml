@@ -36,6 +36,62 @@
             android:text="Sample Title Text"
             android:textColor="@color/colorBlack"
             android:textStyle="bold"/>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp">
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fitsSystemWindows="true"
+                android:button="@drawable/star_rating_selector"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fitsSystemWindows="true"
+                android:button="@drawable/star_rating_selector"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fitsSystemWindows="true"
+                android:button="@drawable/star_rating_selector"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fitsSystemWindows="true"
+                android:button="@drawable/star_rating_selector"/>
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:fitsSystemWindows="true"
+                android:button="@drawable/star_rating_selector"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=" 0 reviews/ Write a reivew"
+                android:textColor="@color/colorBlack"
+                android:textSize="10dp"/>
+
+
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/check_box_favourit"
+            android:layout_width="42dp"
+            android:layout_height="30dp"
+            android:fitsSystemWindows="true"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:button="@drawable/check_box_favourit_selector"/>
         
     </RelativeLayout>
     
@@ -125,12 +181,51 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="6dp"/>
 
-            <RatingBar
+            <LinearLayout
                 android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_below="@+id/tv_saler_name"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:tooltipText="Rating"/>
+                android:orientation="horizontal"
+                android:layout_marginLeft="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Rating: "
+                    android:textColor="@color/colorBlack"
+                    android:textSize="12dp"/>
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:button="@drawable/star_rating_selector"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:button="@drawable/star_rating_selector"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:button="@drawable/star_rating_selector"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:button="@drawable/star_rating_selector"/>
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:fitsSystemWindows="true"
+                    android:button="@drawable/star_rating_selector"/>
+
+
+
+
+            </LinearLayout>
 
             <TextView
                 android:id="@+id/tv_product_code"
@@ -178,6 +273,15 @@
             android:layout_width="match_parent"
             android:layout_height="400dp">
 
+
+            <rdm.dukandaar.NonSwipeableViewPager
+                android:id="@+id/pager"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="50dp" />
+
             <android.support.design.widget.TabLayout
                 android:id="@+id/tab_layout"
                 android:layout_width="match_parent"
@@ -186,20 +290,11 @@
                 android:elevation="6dp"
                 android:minHeight="?attr/actionBarSize"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"/>
-
-
-
-            <rdm.dukandaar.NonSwipeableViewPager
-                android:id="@+id/pager"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
+                app:tabTextAppearance="@android:style/TextAppearance.Widget.TabWidget"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="26dp" />
+                android:backgroundTint="@color/colorOrangeYellow"
+                app:tabTextColor="@color/colorWhite"/>
 
         </RelativeLayout>
 

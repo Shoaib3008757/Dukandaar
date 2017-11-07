@@ -1,8 +1,108 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorOffWhite">
 
+    <TextView
+        android:id="@+id/tv_info_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:text="No reviews for current Project"
+        android:textColor="@color/colorDimBlack"
+        android:layout_marginLeft="30dp"/>
+    <TextView
+        android:id="@+id/tv_write_view"
+        android:layout_below="@+id/tv_info_review"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Write Review"
+        android:textColor="@color/colorBlack"
+        android:textStyle="bold"
+        android:layout_marginTop="4dp"
+        android:layout_centerHorizontal="true"/>
+
+    <EditText
+        android:id="@+id/et_info_review_description"
+        android:layout_below="@+id/tv_write_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="4dp"
+        android:hint="Description Here"
+        android:textColor="@color/colorBlack"
+        android:textColorHint="@color/colorOffWhite"
+        android:gravity="top"
+        android:paddingLeft="4dp"
+        android:background="@drawable/et_background"/>
+
+    <TextView
+        android:id="@+id/tv_info_review_rating"
+        android:layout_below="@+id/et_info_review_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Rating: "
+        android:textColor="@color/colorBlack"
+        android:paddingTop="4dp"/>
+    <RadioGroup
+        android:id="@+id/rg_info_review"
+        android:layout_toRightOf="@id/tv_info_review_rating"
+        android:layout_below="@+id/et_info_review_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDimBlack"
+            android:text="Bad"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorOrangeYellow"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorOrangeYellow"/>/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorOrangeYellow"/>/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorOrangeYellow"/>/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/colorOrangeYellow"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorDimBlack"
+            android:text="Good"/>
+
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/bt_info_review_submit"
+        android:layout_below="@+id/rg_info_review"
+        android:layout_width="100dp"
+        android:layout_height="20dp"
+        android:layout_centerHorizontal="true"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/colorWhite"
+        android:background="@drawable/button_background"
+        android:layout_marginTop="20dp"/>
 
 
 </RelativeLayout>
